@@ -1,0 +1,54 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = true %}
+{% set jumbotron = false %}
+
+{% block title %}
+    {{ 'page.documents.title'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="ui vertical stripe segment">
+		<div class="ui middle aligned stackable grid container">
+			<div class="ui container">
+				<h2>{{ 'page.documents.title'|trans }}</h2>
+				<div class="ui relaxed divided list">
+					<div class="item">
+						<div class="content">
+							<a class="header" href="{{ asset('assets/pdf/catalog.pdf') }}">{{ 'page.documents.catalog'|trans }}</a>
+							<div class="description"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="header" href="{{ asset('assets/pdf/ht-factura.pdf') }}">{{ 'page.documents.invoice'|trans }}</a>
+							<div class="description"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="header" href="{{ asset('assets/pdf/ht-formular-comanda.pdf') }}">{{ 'page.documents.command_form'|trans }}</a>
+							<div class="description"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="header" href="{{ asset('assets/pdf/ht-ordin-plata.pdf') }}">{{ 'page.documents.order_payment'|trans }}</a>
+							<div class="description"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="header" href="{{ asset('assets/pdf/certificat-inregistrare-a-fe-1306079.pdf') }}">{{ 'page.documents.certificate_registry'|trans }}</a>
+							<div class="description"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="header" href="{{ asset('assets/pdf/XII-F-FE-Happy-Toys-SRL.pdf') }}">{{ 'page.documents.gen2_overview' }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

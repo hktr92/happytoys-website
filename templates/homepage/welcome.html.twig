@@ -1,0 +1,52 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = false %}
+{% set jumbotron = true %}
+
+{% block content %}
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="eight wide column">
+                    {{ 'page.homepage.segment1'|trans|raw }}
+                </div>
+                <div class="six wide right floated column">
+                    <img src="{{ asset('assets/png/happytoys_logo.png') }}" class="ui large rounded image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="center aligned column">
+                    <a href="{{ asset('assets/pdf/catalog.pdf') }}" class="ui huge button">{{ 'page.homepage.catalog'|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <h3>{{ 'page.homepage.ad'|trans }}</h3>
+            <video id="my-video" class="video-js" controls preload="auto" width="1280" height="720" poster="{{ asset('assets/png/spot_thumbnail.png') }}" data-setup="{}">
+              <source src="{{ asset('assets/mp4/spot.mp4') }}" type="video/mp4">
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+
+            <div class="ui dimmer">
+                <div class="content">
+                    <div class="center">
+                        <h2 class="ui inverted video-error icon header">
+                            <i class="broken icon"></i>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui container">
+            {{ 'page.homepage.segment3'|trans|raw }}
+        </div>
+    </div>
+{% endblock %}

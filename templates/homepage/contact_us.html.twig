@@ -1,0 +1,42 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = true %}
+{% set jumbotron = false %}
+
+{% block title %}
+    {{ 'page.contact.title'|trans }}
+{% endblock %}
+
+{% block content %}
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+			<div class="ui container">
+				<h2 class="ui header">{{ 'page.contact.title'|trans }}</h2>
+
+                <div class="ui list">
+                    <div class="item">
+                        {{ 'page.contact.address'|trans|raw }}
+                    </div>
+                    <div class="item">
+                        {{ 'page.contact.email'|trans|raw }}
+                    </div>
+                    <div class="item">
+                        {{ 'page.contact.phone'|trans|raw }}
+                    </div>
+                    <div class="item">
+                        {{ 'page.contact.fax'|trans|raw }}
+                    </div>
+                    <div class="item">
+                        {{ 'page.contact.ceo'|trans|raw }}
+                    </div>
+                </div>
+
+				{% if app.debug %}
+				<div class="ui divider"></div>
+
+				<h2>{{ 'page.contact.location'|trans }}</h2>
+				<div id="map"></div>
+				{% endif %}
+			</div>
+        </div>
+    </div>
+{% endblock %}

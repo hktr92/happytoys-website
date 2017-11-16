@@ -1,0 +1,32 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = true %}
+{% set jumbotron = false %}
+
+{% block title %}
+    {{ 'page.about.title'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="ui vertical stripe segment">
+		<div class="ui middle aligned stackable grid container">
+			<div class="ui container">
+				<h2>{{ 'page.achievements.title'|trans }}</h2>
+				<div class="ui divider"></div>
+
+				<h2 class="ui header">
+					<div class="content">
+						{{ 'page.achievements.heading'|trans }}
+					</div>
+				</h2>
+				<div class="fotorama">
+                    {% set start = 0 %}
+                    {% set nume_targ = 'realizari_happytoys_gen2' %}
+                    {% for count in 1..5 %}
+                        {% set start = start +1 %}
+						<img class="ui fluid image" src="{{ asset('assets/jpg/' ~ nume_targ ~ '_' ~ count ~ '.jpg') }}">
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

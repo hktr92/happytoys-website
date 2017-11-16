@@ -1,0 +1,24 @@
+{
+  "name": "happytoys-web",
+  "authors": [
+    "hktr92 <petru.office92@gmail.com>"
+  ],
+  "description": "Design-ul site-ului F.E. Happy Toys S.R.L.",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1",
+    "ckeditor": "^4.5",
+    "font-awesome": "^4.6",
+    "semantic": "semantic-ui#^2.2.4"
+  }
+}

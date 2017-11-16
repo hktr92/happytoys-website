@@ -1,0 +1,76 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = true %}
+{% set jumbotron = false %}
+
+{% block title %}
+    {{ 'page.gallery.title'|trans }}
+{% endblock %}
+
+{% block content %}
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="ui container">
+                <h2>{{ 'page.gallery.title'|trans }}</h2>
+                <div class="ui divider"></div>
+
+                <h2 class="ui header">
+                  <div class="content">
+                    Târgul Firmelor de Exercițiu „Rivulus Dominarum” - Tineret
+                    <div class="sub header">
+                      <i class="fa fa-repeat"></i> editia a X-a |
+                      <i class="fa fa-map-marker"></i> Baia Mare |
+                      <i class="fa fa-calendar"></i> 26 noiembrie 2016
+                    </div>
+                  </div>
+                </h2>
+                <div class="fotorama">
+                  {% set start = 0 %}
+                  {% set nume_targ = 'rivulus_dominarum_bm_20161126' %}
+                  {% for count in 1..4 %}
+                    {% set start = start +1 %}
+                    <img class="ui fluid image" src="{{ asset('assets/jpg/' ~ nume_targ ~ '_' ~ count ~ '.jpg') }}">
+                  {% endfor %}
+                </div>
+                <div class="ui divider"></div>
+
+                <h2 class="ui header">
+                  <div class="content">
+                    Târgul de Primăvară al Firmelor de Exercițiu
+                    <div class="sub header">
+                      <i class="fa fa-map-marker"></i> Cluj-Napoca |
+                      <i class="fa fa-calendar"></i> 01 aprilie 2016
+                    </div>
+                  </div>
+                </h2>
+                <div class="fotorama">
+                    {% set start = 0 %}
+                    {% set nume_targ = 'targ_fe_primavara_cj_20160401' %}
+                    {% for count in 1..5 %}
+                        {% set start = start + 1 %}
+                        <img class="ui fluid image" src="{{ asset('assets/jpg/' ~ nume_targ ~ '_' ~ count ~ '.jpg') }}">
+                    {% endfor %}
+                </div>
+
+                <div class="ui divider"></div>
+                <h2 class="ui header">
+                  <div class="content">
+                    Târgul Firmelor de Exercițiu „Rivulus Dominarum” - Tineret
+                    <div class="sub header">
+                      <i class="fa fa-repeat"></i> editia a IX-a |
+                      <i class="fa fa-map-marker"></i> Baia Mare |
+                      <i class="fa fa-calendar"></i> 5-6 decembrie 2016
+                    </div>
+                  </div>
+                </h2>
+                <div class="fotorama">
+                    {% set start = 0 %}
+                    {% set nume_targ = 'rivulus_dominarum_bm_20151205' %}
+                    {% for count in 1..10 %}
+                        {% set start = start + 1 %}
+                        <img class="ui fluid image" src="{{ asset('assets/jpg/' ~ nume_targ ~ '_' ~ count ~ '.jpg') }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

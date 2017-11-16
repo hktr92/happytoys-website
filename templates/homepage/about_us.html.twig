@@ -1,0 +1,79 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = true %}
+{% set jumbotron = false %}
+
+{% block title %}
+    {{ 'page.about.title'|trans }}
+{% endblock %}
+
+{% block content %}
+	<div class="ui vertical stripe segment">
+		<div class="ui middle aligned stackable grid container">
+			<div class="ui container">
+				<h2>{{ 'page.about.title'|trans }}</h2>
+				<div class="ui divider"></div>
+
+				<div class="ui grid">
+					<div class="seven wide column">
+                        {{ 'page.about.segment1'|trans|raw }}
+					</div>
+					<div class="seven wide column">
+						<img src="{{ asset('assets/jpg/roct-info.jpg') }}" class="ui image fluid">
+					</div>
+				</div>
+
+				<div class="ui divider"></div>
+                {{ 'page.about.segment2'|trans|raw }}
+				<div class="ui divider"></div>
+				<h3>{{ 'page.documents.certificate_registry'|trans }}</h3>
+				<img src="{{ asset('assets/jpg/certificat-inregistrare-a-fe-1306079.jpg') }}" class="ui fluid image">
+
+				<div class="ui divider"></div>
+
+				<div class="ui grid">
+					<div class="four wide column">
+						<h3>{{ 'page.about.team'|trans }}</h3>
+						<div class="ui middle aligned animated list">
+							<div class="item">
+								<div class="content">
+									<a class="header">Mădălina Tutuța</a>
+									<div class="description">{{ 'page.about.ceo'|trans }}</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="content">
+									<a class="header">Petru Szemereczki</a>
+									<div class="description">{{ 'page.about.cto'|trans }}</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="content">
+									<a class="header">Florina Vișchi</a>
+									<div class="description">{{ 'page.about.cmo'|trans }}</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="content">
+									<a class="header">Mihăiță Dunca</a>
+									<div class="description">{{ 'page.about.ceco'|trans }}</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="content">
+									<a class="header">Andrei Roatiș</a>
+									<div class="description">{{ 'page.about.cruo'|trans }}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="twelve wide column">
+						<h3>{{ 'page.about.workflow'|trans }}</h3>
+						<img class="ui fluid image" src="{{ asset('assets/png/organigrama.png') }}">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

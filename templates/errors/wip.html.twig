@@ -1,0 +1,20 @@
+{% extends 'happy.html.twig' %}
+{% set page_active = true %}
+{% set jumbotron = false %}
+
+{% block title %}
+    {{ 'errors.wip.title'|trans }}
+{% endblock %}
+
+{% block content %}
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="ui container">
+                <h2>{{ 'errors.wip.title'|trans }}</h2>
+                <p>
+                    {{ 'errors.wip.message'|trans }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

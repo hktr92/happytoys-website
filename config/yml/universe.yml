@@ -1,0 +1,56 @@
+######
+# Informații generale despre serverul de Metin2
+###
+# Numele serverului de Metin2
+server_name: Metin2Universe
+# Tipul serverului de Metin2
+server_type: PvM Hard
+# Numărul de conturi de staff (pentru ignorarea contorizării acestora în statistici)
+server_staff: 1
+# Modul serverului (valori posibile: official | beta | coming_soon | maintenance
+server_mode: official
+######
+
+######
+# Informații generale despre perioada Beta_
+#
+# ATENȚIE: Trebuie setat server_mode cu valoarea 'beta' pentru accesarea acestor opțiuni_
+###
+# Limita maximă de conturi pentru înregistrările Beta
+beta_limit: 50
+# Când începe perioada Beta
+beta_start_period: 10 iulie 2016
+# Recompensele pentru Beta (fiecare recompensă scrisă în format listă, cu - înainte; ex mai jos)
+beta_rewards:
+    - 100 monede pentru shop
+    - 10 tokens pentru shop
+    - 1 token pentru item random pe site
+    - 100_000 Yang în joc
+######
+
+######
+# Setări cu privire la informațiile pentru Search Engine Optimization (Optimizare Motor de Căutare)_
+###
+# Dacă se folosește mod_rewrite al Apache2 (valori posibile: true | false)_
+seo_rewrite: true
+# Cuvinte-cheie pentru pagină web_ Format CSV (comma-sepparated values)_
+seo_keywords: metin2,server privat,server romanesc,server pvm hard,actiune,drama,mmo,sex,mia khalifa
+# O scurtă descriere a paginii web_
+seo_description: Metin2Universe este un server privat de Metin2 tip PvM Hard, neafiliat cu creatorii jocului Metin2_
+# Adresa de bază a site-ului web_
+seo_url: http://metin2universe_ro
+###
+
+######
+# Diverse liste folosite pe site_
+###
+# O listă de module permise pentru folosire_
+lists_modules:
+    - panou_cont
+    - panou_jucător
+    - panou_administrator
+# O listă cu widget-urile permise pentru folosire pe site_
+lists_widgets:
+    - elita_jucatori
+    - elita_bresle
+######

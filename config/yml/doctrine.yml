@@ -1,0 +1,33 @@
+######
+# Doctrine Configuration file
+#
+# În acest fișier faci configurația pentru baza de date MySQL.
+###
+
+###
+# Baza de date 'account'
+account:
+  # Driver-ul bazei de date. Nu schimba!
+  driver: pdo_mysql
+  # Hostname-ul pentru baza de date
+  host: 46.108.26.33
+  # Numele bazei de date
+  dbname: account
+  # Numele de utilizator al bazei de date
+  user: cms_account
+  # Parola utilizatorului
+  password: 3233b2d0da24ca69c47867ea55ede6c6
+  # Charset-ul. lasă neschimbat!
+  charset: utf8mb4
+###
+
+###
+# The 'player' database
+player:
+  driver: pdo_mysql
+  host: 46.108.26.33
+  dbname: player
+  user: cms_player
+  password: cc061f96f53171da0e901e360e4eb2af
+  charset: utf8mb4
+###
