@@ -1,0 +1,150 @@
+{% set navbar_active = false %}
+<!DOCTYPE html>
+<html lang="{{ app.locale }}">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>{% block title %}{{ 'page.default.title'|trans }}{% endblock %} &mdash; {{ 'company.name'|trans }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/happy.css') }}">
+
+    <!-- fotorama.css & fotorama.js. -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <link href="http://vjs.zencdn.net/5.17.0/video-js.css" rel="stylesheet">
+
+    <link rel="alternate" hreflang="{{ app.locale }}" href="{{ url('locale') }}">
+</head>
+<body class="pushable">
+
+<!-- notice -->
+{% if app.debug %}
+<div class="ui container">
+    <div class="ui icon mini error message">
+        <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
+        <span class="close icon"><i class="fa fa-times"></i></span>
+        <div class="content">
+            <div class="header">
+                {{ 'site.performance_issue.title'|trans }}
+            </div>
+            <p>{{ 'site.performance_issue.message'|trans }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+<!-- end -->
+
+<!-- Following Menu -->
+<div class="ui large top fixed menu transition hidden">
+    <div class="ui container">
+        <a href="{{ url('locale') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.homepage.menu'|trans }}</a>
+        <a href="{{ url('documents') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.documents.menu'|trans }}</a>
+        <a href="{{ url('offers') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.offers.menu'|trans }}</a>
+        <a href="{{ url('gallery') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.gallery.menu'|trans }}</a>
+        <a href="{{ url('about_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.about.menu'|trans }}</a>
+        <a href="{{ url('contact_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.contact.menu'|trans }}</a>
+
+        {#<div class="right menu">#}
+            {#<div class="item">#}
+                {#<a href="{{ url('lang_switch', { 'language': 'ro' }) }}" class="ui button{% if app.locale == 'ro' %} primary{% endif %}">Română</a>#}
+            {#</div>#}
+            {#<div class="item">#}
+                {#<a href="{{ url('lang_switch', { 'language': 'en' }) }}" class="ui button{% if app.locale == 'en' %} primary{% endif %}">English</a>#}
+            {#</div>#}
+        {#</div>#}
+    </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical sidebar menu left">
+    <a href="{{ url('locale') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.homepage.menu'|trans }}</a>
+    <a href="{{ url('documents') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.documents.menu'|trans }}</a>
+    <a href="{{ url('offers') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.offers.menu'|trans }}</a>
+    <a href="{{ url('gallery') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.gallery.menu'|trans }}</a>
+    <a href="{{ url('about_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.about.menu'|trans }}</a>
+    <a href="{{ url('contact_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.contact.menu'|trans }}</a>
+
+    {#<a href="{{ url('lang_switch', { 'language': 'ro' }) }}" class="item">Română{% if app.locale == 'ro' %} (curent){% endif %}</a>#}
+    {#<a href="{{ url('lang_switch', { 'language': 'en' }) }}" class="item">English{% if app.locale == 'en' %} (current){% endif %}</a>#}
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="ui masthead center aligned {% if jumbotron %}vertical segment cover{% endif %}">
+
+        <div class="ui container">
+            <div class="ui large secondary pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+
+                <a href="{{ url('locale') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.homepage.menu'|trans }}</a>
+                <a href="{{ url('documents') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.documents.menu'|trans }}</a>
+                <a href="{{ url('offers') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.offers.menu'|trans }}</a>
+                <a href="{{ url('gallery') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.gallery.menu'|trans }}</a>
+                <a href="{{ url('about_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.about.menu'|trans }}</a>
+                <a href="{{ url('contact_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.contact.menu'|trans }}</a>
+
+                {#<div class="right item">#}
+                    {#<a href="{{ url('lang_switch', { 'language': 'ro' }) }}" class="ui gray button{% if app.locale == 'ro' %} blue{% endif %}">Română</a>#}
+                    {#<a href="{{ url('lang_switch', { 'language': 'en' }) }}" class="ui gray button{% if app.locale == 'en' %} blue{% endif %}">English</a>#}
+                {#</div>#}
+            </div>
+        </div>
+
+        {% if jumbotron %}
+            <div class="ui text container">
+                <h1 class="ui header">{{ 'company.name'|trans }}</h1>
+                <h2>{{ 'company.motto'|trans }}</h2>
+            </div>
+        {% endif %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">{{ 'footer.about_company'|trans }}</h4>
+                    <div class="ui inverted link list">
+                        <a href="{{ url('documents') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.documents.menu'|trans }}</a>
+                        <a href="{{ url('offers') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.offers.menu'|trans }}</a>
+                        <a href="{{ url('about_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.about.menu'|trans }}</a>
+                        <a href="{{ url('contact_us') }}" class="{% if navbar_active %}active {% endif %}item">{{ 'page.contact.menu'|trans }}</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">{{ 'footer.external_links'|trans }}</h4>
+                    <div class="ui inverted link list">
+                        <a href="//roct.ro" target="_blank" class="item">Site ROCT</a>
+                        <a href="//colegiultitulescu.ro" target="_blank" class="item">Site CENT</a>
+                        <a href="//semantic-ui.com" target="_blank" class="item">Semantic UI</a>
+                        <a href="//silex.sensiolabs.org" target="_blank" class="item">Silex</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">{{ 'company.name'|trans }}</h4>
+                    <p>
+                        {{ 'footer.notice'|trans }}<br>
+                        {{ 'footer.author'|trans|raw }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/visibility.min.js') }}"></script>
+<script src="{{ asset('assets/js/sidebar.min.js') }}"></script>
+<script src="{{ asset('assets/js/transition.min.js') }}"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+<script src="http://vjs.zencdn.net/5.17.0/video.js"></script>
+<script src="{{ asset('assets/js/happy.js') }}"></script>
+
+</body>
+</html>
